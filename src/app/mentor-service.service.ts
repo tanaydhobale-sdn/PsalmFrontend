@@ -12,7 +12,7 @@ export class MentorServiceService {
    url=environment.apiUrl;
 
    signUpMentor(body:any) {
-    return this.http.post(this.url + "mentor/register", body,{
+    return this.http.post(this.url + "/mentor/register", body,{
     });
   }
   login(body:any){

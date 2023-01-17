@@ -18,10 +18,11 @@ export class SignupComponent implements OnInit {
     this.signupForm= new FormGroup({
       firstName: new FormControl(''),
       lastName: new FormControl(''),
-      dob: new FormControl(''),
+      date_of_birth: new FormControl(''),
       email: new FormControl(''),
       phone: new FormControl(''),
-      username: new FormControl('')
+      username: new FormControl(''),
+      role:new FormControl(''),
     });
   }
 
@@ -31,18 +32,19 @@ export class SignupComponent implements OnInit {
   }
 
   SignUp(){
-    this.submitted= true
-    if(this.signupForm.invalid){
-       this.toastr.error('Invalid')
-      return
-    }
+    
+    // this.submitted= true
+    // if(this.signupForm.invalid){
+    //    this.toastr.error('Invalid')
+    //   return
+    // }
     
     
     let myjson:any = {
 firstName:this.signupForm.get("firstName")?.value,
 lastName:this.signupForm.get("lastName")?.value,
 email:this.signupForm.get("email")?.value,
-date_of_birth:this.signupForm.get("dob")?.value,
+date_of_birth:this.signupForm.get("date_of_birth")?.value,
 phone:this.signupForm.get("phone")?.value,
 username:this.signupForm.get("username")?.value,
 role:1

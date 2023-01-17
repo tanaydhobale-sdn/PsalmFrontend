@@ -50,13 +50,18 @@ username:this.signupForm.get("username")?.value,
 role:1
     }
     console.log(myjson,"myjson");
-this.mentorservice.signUpMentor(myjson).subscribe((data)=>{
-  this.response = data
-  if(this.response){
-    this.toastr.success("Signup successfully")
-    this.signupdata=this.response.data
-  }else{
-    this.toastr.error("Something went wroung")
+this.mentorservice.signUpMentor(myjson).subscribe((res:any)=>{
+  // this.response = data
+  // this.response = 
+  if (res.status === "Success" && res.messageID === 200) {
+    this.toastr.success(res.message, res.status);
+    //this.router.navigate(['/email-verification'], { queryParams: { token: res.data } })
+  }
+  else if (res.status === "failed" && res.messageID === 400) {
+    this.toastr.error(res.message[0].msg, res.status);
+  }
+  else {
+    this.toastr.error(res.message, res.status);
   }
 })
   }

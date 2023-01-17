@@ -1,0 +1,17 @@
+<form [formGroup]="signupForm">
+<input type="text" placeholder="First Name" formControlName="firstName" class="space">
+
+<input type="text" placeholder="Last Name " formControlName="lastName" class="space"><br>
+
+<input type="date" placeholder="DOB" formControlName="dob" class="space">
+
+<input type="number" placeholder="Mobile" formControlName="phone" class="space"><br>
+
+<input type="email" placeholder="Email" formControlName="email" class="space">
+
+<input type="text" placeholder="User Name" formControlName="username" class="space"><br>
+
+<button (click)="SignUp()"> Sign Up</button>
+</form>
+
+
